@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}Dashboard{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        {% block header %}<h2>DASHBOARD</h2><hr>{% endblock %}
+    </div>
+
+    <div class="card">
+        <table class='table table-md'>
+            <div class="card-header">
+                <tr>
+                    <th>USERNAME</th>
+                    <th>EMAIL</th>
+                </tr>
+            </div>
+            <div class="card-body">
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td> 
+                </tr>  
+            </div>
+        </table>
+    </div>
+    <br>
+     
+    <section>
+
+        <div class="">
+            <a href=""><b>Update Account</b></a>
+        </div>
+
+        <form method="POST" action="{{ url_for('update') }}">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" value="{{ user.username }}", class="form-control">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" value="{{ user.email }}", class="form-control">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" value="{{ user.password }}", class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+        </form>
+    </section>
+{% endblock %}
+
+

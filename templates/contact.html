@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}Contact Us{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    {% block header %}<div><h3>HEALTH CARE SOLUTIONS</h3></div><hr>{% endblock %}
+</div>
+<br>
+<!-- Row and Column with Image and Contact Us Form -->
+<form action="/contact" method="post">
+    <div class="">
+        <div class="row">
+            <div class="col-md-8">
+                <img src="{{ url_for('static', filename='images/image6.jpg') }}" alt="Image 6">
+            </div>
+            <div class="col-md-4">
+                <div class="contact-form">
+                    <h2>Contact Us</h2>
+                    
+                    <div class="form-group">
+                        {{ form.user_name.label }}
+                        {{ form.user_name(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email.label }}
+                        {{ form.email(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.subject.label }}
+                        {{ form.subject(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.message.label }}
+                        {{ form.message(class="form-control") }}
+                    </div>
+                    <br>
+                        {{ form.submit(class="btn btn-primary") }}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<br>
+ <p>You can also reach us at:</p>
+    <ul>
+      <li>Phone: 555-1234</li>
+      <li>Email: info@company.com</li>
+    </ul>
+<a href="{{ url_for('home') }}"><b>Back to Home Page</b></a>
+{% endblock %}

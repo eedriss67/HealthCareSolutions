@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Home Page{% endblock %}
+
+
+
+
+{% block body %}
+
+{% block header %}<div><h3>HEALTH CARE SOLUTIONS</h3></div><hr>{% endblock %}
+<!-- Create the carousel HTML structure -->
+<div class="jumbotron">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel" id="#carousel">
+    <div class="carousel-inner">
+        <div class="carousel-images">
+            <img src="{{ url_for('static', filename='images/image10.jpg') }}" alt="Image 10">
+            <img src="{{ url_for('static', filename='images/image3.jpg') }}" alt="Image 3">
+            <img src="{{ url_for('static', filename='images/image4.jpg') }}" alt="Image 4">
+            <img src="{{ url_for('static', filename='images/image11.jpg') }}" alt="Image 11">
+        </div>
+    </div>
+
+      <div class="carousel-controls">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div> 
+  </div>
+</div>
+
+<!--Introduction-->
+<div class="jumbotron">
+  <h3>YOUR CLEANINESS IS OUR GOAL!</h3>
+    <img src="{{ url_for('static', filename='images/image5.jpg') }}" alt="Image 5">
+  <p class="">
+    <div class="container">
+      <b>Welcome to A&A Care and Cleaning Services Ltd</b> - Your Trusted Partner in Cleaning Services!
+
+      We understand that a clean and healthy environment is crucial for your well-being and the well-being of those around you. That's why we provide professional cleaning services that cater to your needs and exceed your expectations.
+
+      Our team of skilled and experienced cleaners is dedicated to providing high-quality cleaning services that are tailored to your unique needs. Whether you're looking for regular cleaning services, deep cleaning, or specialized cleaning for healthcare facilities, we've got you covered.
+
+      At Health Care Solutions, we use only the latest equipment and eco-friendly cleaning products to ensure that your space is clean, hygienic, and safe. We are committed to delivering exceptional customer service and ensuring your satisfaction with every cleaning job we undertake.
+
+      We invite you to explore our website and learn more about the services we offer. If you have any questions or would like to request a quote, please don't hesitate to <a href="{{ url_for('contact') }}"><b>get in touch with us</b></a>. We look forward to serving you and helping you achieve a cleaner, healthier space.</p> 
+    </div>
+</div>
+{% endblock %}
+
+<!--About Us-->
+{% block section %}
+<section id="about-us">
+    <div class="jumbotron">
+        <h3>ABOUT US</h3>
+        <div class="">
+         <img src="{{ url_for('static', filename='images/image.jpg') }}" alt="Image">
+        </div>
+
+        <p>
+          <div class="container">
+            <p><b>At A&A Care and Cleaning Services Ltd</b>, we understand the importance of a clean and healthy environment. Our mission is to provide top-notch cleaning services that meet and exceed your expectations.
+
+              Our team of skilled and experienced professionals is equipped with state-of-the-art tools and equipment to handle any cleaning task. From homes to offices, hospitals to schools, we offer a range of services that cater to your unique needs.
+
+              We take pride in using eco-friendly cleaning products that are safe for you and the environment. Our cleaning solutions are designed to eliminate harmful bacteria and viruses, ensuring that your space is not only clean but also healthy.
+
+              Our services include but are not limited to:</p>
+              <ul class="list-item">
+                  <li>Residential cleaning</li>
+                  <li>Office cleaning</li>
+                  <li>Janitorial services</li>
+                  <li>Hospital cleaning</li>
+                  <li>School cleaning</li>
+                  <li>Window cleaning</li>
+                  <li>Carpet cleaning</li>
+                  <li>And more!</li>
+              </ul>    
+              <p><b>At A&A Care and Cleaning Services Ltd</b>, we understand that every client has unique needs. That's why we work closely with you to develop a customized cleaning plan that fits your budget and schedule. We are committed to delivering exceptional results, and we guarantee your satisfaction.
+
+              <a href="{{ url_for('contact') }}"><b>Contact us today</b></a> to schedule your cleaning services and experience the Health Care Solutions difference.</p>
+          </div> 
+        </p>  
+    </div>
+</section>
+
+<br>
+<br>
+
+<!--Back to top button link-->
+<a href="#" class="back-to-top">Top</a>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="static/Js/script.js"></script>
+
+{% endblock section %}

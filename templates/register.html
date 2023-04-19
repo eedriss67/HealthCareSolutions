@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+<h1>{% block title %}Register{% endblock %}</h1>
+
+
+
+{% block body %}
+
+{% block header %}<div><h3>HEALTH CARE SOLUTIONS</h3></div><hr>{% endblock %}
+<h1>Register</h1>
+
+<div class="container">
+  <form method="post">
+    {{ form.hidden_tag() }}
+  
+    <div class="form-group">
+        {{ form.username.label }}
+        {% if form.username.errors %}
+          {{ form.username(size=30, class='form-controlform-control-lg is-invalid') }}
+            {% for error in form.username.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+            {% else %}
+            {{ form.username(size=30, class='form-control') }}
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        {{ form.email.label }}
+        {% if form.email.errors %}
+          {{ form.email(size=30, class='form-control form-control-lg is-invalid') }}
+            {% for error in form.email.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+            {% else %}
+            {{ form.email(size=30, class='form-control') }}
+        {% endif %}
+    </div>
+    
+    <div class="form-group">
+        {{ form.password.label }}
+        {% if form.password.errors %}
+          {{ form.password(size=30, class='form-control form-control-lg is-invalid') }}
+            {% for error in form.password.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+            {% else %}
+          {{ form.password(size=30, class='form-control') }}
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        {{ form.confirm.label }}
+        {% if form.confirm.errors %}
+          {{ form.confirm(size=30, class='form-control form-control-lg is-invalid') }}
+            {% for error in form.confirm.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+            {% else %}
+            {{ form.confirm(size=30, class='form-control') }}
+        {% endif %}
+    </div>
+  
+    <br>
+    {{ form.submit(class="btn btn-primary") }}
+  </form>
+</div>
+
+{% endblock %}

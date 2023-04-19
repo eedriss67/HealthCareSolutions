@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+<h1>{% block title %}Log In{% endblock %}</h1>
+
+
+
+{% block body %}
+
+{% block header %}<div><h3>HEALTH CARE SOLUTIONS</h3></div><hr>{% endblock %}
+<h1>Log In</h1>
+
+  <form method="POST" action="">
+    
+    {{ form.hidden_tag() }}
+    
+    <div class="form-group">
+      {{ form.email.label }} 
+      {{ form.email(size=20, class="form-control") }}
+      {% if errors %}
+        {% for error in form.email.errors %}
+          <span>{{ error }}</span>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      {{ form.password.label }} 
+      {{ form.password(size=20, class="form-control") }}
+      {% if errors %}
+        {% for error in form.password.errors %}
+          <span>{{ error }}</span>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <div class="form-group form-check mt-2">
+        {{ form.remember_me(class_='form-check-input') }}
+        {{ form.remember_me.label(class_='form-check-label') }}
+    </div>
+
+    <br>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+
+{% endblock %}
