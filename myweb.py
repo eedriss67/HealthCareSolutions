@@ -46,9 +46,9 @@ login_manager = LoginManager(app)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'eedriss67@gmail.com'
-app.config['MAIL_PASSWORD'] = 'success247'
-app.config['MAIL_DEFAULT_SENDER'] = 'eedriss67@gmail.com'
+app.config['MAIL_USERNAME'] = 'admin@gmail.com'
+app.config['MAIL_PASSWORD'] = 'admin'
+app.config['MAIL_DEFAULT_SENDER'] = 'admin@gmail.com'
 
 mail = Mail(app)
 
