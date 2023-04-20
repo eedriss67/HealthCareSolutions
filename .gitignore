@@ -19,3 +19,6 @@ env/
 
 # Database
 instance/
+
+# Gitignore
+.gitignore
