@@ -11,10 +11,10 @@
 # Built Visual Studio Code Extensions
 *.vsix
 
-# __Pycache__ files
+# Pycache
 __pycache__/
 
-# Env files
+# Env
 env/
 
 # Database
