@@ -117,9 +117,10 @@ class Job(db.Model):
 class AdminView(AdminIndexView):
     def is_accessible(self):
         if current_user and is_admin:
-            return current_user.is_authenticated
+            return render_template('admin/index.html')
 
-        return abort(403)
+        else:
+            return abort(403)
 
 
 
@@ -194,7 +195,7 @@ def contact():
         message = form.message.data
 
         # Send the email
-        msg = Message(subject, recipients=['eedriss67@gmail.com'])
+        msg = Message(subject, recipients=['admin@gmail.com'])
         msg.body = f"Name: {name}\nEmail: {email}\n\n{message}"
         mail.send(msg)
 
