@@ -116,7 +116,7 @@ class Job(db.Model):
 # Custom class for the Admin View
 class AdminView(AdminIndexView):
     def is_accessible(self):
-        if current_user and is_admin:
+        if current_user:
             return render_template('admin/index.html')
 
         else:
