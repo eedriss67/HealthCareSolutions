@@ -19,9 +19,3 @@ env/
 
 # Database
 instance/
-
-# FormHelper
-templates
-
-# Gitignore
-.gitignore/
