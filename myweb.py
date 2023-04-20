@@ -233,12 +233,14 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
-        if user is None or not user.check_password(form.password.data):
+        if user and user.check_password(form.password.data):
+            login_user(user)
+            flash('Login successful!', 'success')
+            return redirect(url_for('home'))
+        else:
             flash('Invalid email or password', 'danger')
             return redirect(url_for('login'))
-        login_user(user)
-        flash('Login successful!', 'success')
-        return redirect(url_for('home'))
+        
     return render_template('login.html', form=form)
 
 
