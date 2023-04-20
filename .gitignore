@@ -21,7 +21,7 @@ env/
 instance/
 
 # FormHelper
-templates/
+templates
 
 # Gitignore
 .gitignore/
