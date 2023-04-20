@@ -119,7 +119,7 @@ class AdminView(AdminIndexView):
         if current_user and is_admin:
             return current_user.is_authenticated
 
-        return (403)
+        return abort(403)
 
 
 
