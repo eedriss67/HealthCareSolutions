@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 
 # Flask Form Secret Key Configuration
-app.config['SECRET_KEY'] = 'WEB247' 
+app.config['SECRET_KEY'] = '' 
 
 
 
@@ -28,7 +28,7 @@ app.config['FLASK_ADMIN_SWATCH'] = 'flatly'
 
 
 # DataBase configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///something.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 with app.app_context():
     db = SQLAlchemy(app)
