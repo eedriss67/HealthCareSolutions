@@ -114,9 +114,10 @@ class Job(db.Model):
 
 
 # Custom class for the Admin View
-class AdminView(AdminIndexView):
+class CustomAdminView(ModelView):
+    can_export = True
     def is_accessible(self):
-        if current_user.is_authenticated:
+        if current_user.is_authenticated and is_admin:
             return redirect(url_for('admin'))
 
         else:
@@ -124,23 +125,17 @@ class AdminView(AdminIndexView):
 
 
 
-# Custom class for the Model view
-class UsersView(ModelView):
-    can_export = True
-
-
-
 
 
 
 # Admin Setup
-admin = Admin(app, name='A&A CARE AND CLEANING SERVICES LTD', index_view=AdminView())
-admin.add_view(UsersView(User, db.session))
+admin = Admin(app, name='A&A CARE AND CLEANING SERVICES LTD')
+admin.add_view(CustomAdminView(User, db.session))
 admin.add_view(ModelView(Agency, db.session))
 admin.add_view(ModelView(Job, db.session))
 
 # add logout link to menu bar in the flask Admin
-admin.add_link(MenuLink(name='Logout', url='/logout'))
+# admin.add_link(MenuLink(name='Logout', url='/logout'))
 
 
 
@@ -157,9 +152,10 @@ def load_user(user_id):
 
 
 # Custom Admin Route
-@app.route('/admin')
-def admin():
-    return render_template('admin/index.html')
+# @app.route('/admin')
+# @login_required
+# def admin():
+#     return render_template('admin/index.html')
 
 
 
@@ -279,7 +275,6 @@ def update():
 
 # Logout Page Route
 @app.route('/logout')
-@login_required
 def logout():
     logout_user()
     flash('You have logged out!', 'success')
