@@ -158,7 +158,6 @@ def load_user(user_id):
 
 # Custom Admin Route
 @app.route('/admin')
-@login_required
 def admin():
     return render_template('admin/index.html')
 
