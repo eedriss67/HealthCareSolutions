@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 
 # Flask Form Secret Key Configuration
-app.config['SECRET_KEY'] = '' 
+app.config['SECRET_KEY'] = 'secret_key' 
 
 
 
