@@ -120,7 +120,7 @@ class AdminView(AdminIndexView):
             return redirect(url_for('login'))
 
         else:
-            return abort(403)
+            return redirect(url_for('admin'))
 
 
 
