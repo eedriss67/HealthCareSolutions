@@ -134,7 +134,7 @@ class UsersView(ModelView):
 
 
 # Admin Setup
-admin = Admin(app, name='A&A CARE AND CLEANING SERVICES LTD')
+admin = Admin(app, name='A&A CARE AND CLEANING SERVICES LTD', index_view=AdminView())
 admin.add_view(UsersView(User, db.session))
 admin.add_view(ModelView(Agency, db.session))
 admin.add_view(ModelView(Job, db.session))
