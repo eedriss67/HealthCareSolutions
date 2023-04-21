@@ -116,6 +116,7 @@ class Job(db.Model):
 # Custom class for the Admin View
 class CustomAdminView(ModelView):
     can_export = True
+    
     def is_accessible(self):
         if current_user.is_authenticated and is_admin:
             return redirect(url_for('admin'))
