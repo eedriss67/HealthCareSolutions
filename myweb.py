@@ -118,7 +118,7 @@ class CustomAdminView(ModelView):
     can_export = True
     
     def is_accessible(self):
-        if current_user.is_authenticated and is_admin:
+        if current_user.is_authenticated and current_user.is_admin:
             return redirect(url_for('admin'))
 
         else:
@@ -153,10 +153,10 @@ def load_user(user_id):
 
 
 # Custom Admin Route
-# @app.route('/admin')
-# @login_required
-# def admin():
-#     return render_template('admin/index.html')
+@app.route('/admin')
+@login_required
+def admin():
+    return render_template('admin/index.html')
 
 
 
