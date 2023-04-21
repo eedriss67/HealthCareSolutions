@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 
 # Flask Form Secret Key Configuration
-app.config['SECRET_KEY'] = 'secret_key' 
+app.config['SECRET_KEY'] = 'secret' 
 
 
 
@@ -116,6 +116,7 @@ class Job(db.Model):
 # Custom class for the Admin View
 class CustomAdminView(ModelView):
     can_export = True
+    column_exclude_list = ['password', ]
     
     def is_accessible(self):
         if current_user.is_authenticated and current_user.is_admin:
