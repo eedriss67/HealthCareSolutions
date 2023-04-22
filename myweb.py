@@ -48,8 +48,9 @@ login_manager = LoginManager(app)
 
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
+app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = EMAIL
 app.config['MAIL_PASSWORD'] = PASSWORD
 app.config['MAIL_DEFAULT_SENDER'] = SENDER
@@ -177,11 +178,11 @@ def about():
 
 
 # Route for the contact page
-@app.route('/contact/', methods=['GET', 'POST'])
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    form = ContactForm(request.form)
+    form = ContactForm()
 
-    if request.method == 'POST' and form.validate():
+    if form.validate_on_submit():
         # Get the form data
         name = form.name.data
         email = form.email.data
@@ -193,6 +194,7 @@ def contact():
         msg.body = f"Name: {name}\nEmail: {email}\n\n{message}"
         mail.send(msg)
 
+        flash('Your email has been sent', 'success')
         return render_template('contact.html', success=True)
         
     return render_template('contact.html', form=form)      
