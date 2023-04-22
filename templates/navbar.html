@@ -22,7 +22,16 @@
       </ul>
 
       <ul class="navbar-nav ms-auto">
-        {% if current_user.is_authenticated %} 
+        {% if current_user.is_authenticated and current_user.is_admin %} 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hello {{ current_user.username }}</a>  
+            <ul class="dropdown-menu"> 
+              <li><a class="dropdown-item" href="/dashboard/">Dashboard</a></li>
+              <li><a class="dropdown-item" href="/admin/">Admin</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('logout') }}">Log out</a></li>
+            </ul>
+          </li>
+        {% elif current_user.is_authenticated %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hello {{ current_user.username }}</a>  
             <ul class="dropdown-menu"> 
@@ -30,7 +39,7 @@
               <li><a class="dropdown-item" href="{{ url_for('logout') }}">Log out</a></li>
             </ul>
           </li>
-        {% else %}
+          {% else %}
           <li class="nav-item">
             <a class="nav-link active" href="{{ url_for('login') }}">LOGIN</a>
           </li>
