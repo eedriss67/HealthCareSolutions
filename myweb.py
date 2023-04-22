@@ -5,9 +5,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from flask_admin.contrib.sqla import ModelView
-from flask_admin import Admin, AdminIndexView
+from flask_admin import Admin, AdminIndexView, expose
 from datetime import datetime
 from flask_admin.menu import MenuLink
+
 
 
 
@@ -25,6 +26,9 @@ app.config['SECRET_KEY'] = 'secret'
 
 # set optional bootswatch theme
 app.config['FLASK_ADMIN_SWATCH'] = 'flatly'
+
+
+
 
 
 # DataBase configuration
@@ -64,7 +68,7 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True) 
     username = db.Column(db.String(35), unique=True, nullable=False)
     email = db.Column(db.String(55), unique=True, nullable=False)
-    password = db.Column(db.String(55), nullable=False)
+    password = db.Column(db.String(), nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
     agency_id = db.Column(db.Integer, db.ForeignKey('agency.id'))
     jobs = db.relationship('Job', backref='user', lazy=True)
@@ -114,30 +118,32 @@ class Job(db.Model):
 
 
 # Custom class for the Admin View
-class CustomAdminView(ModelView):
-    can_export = True
-    column_exclude_list = ['password', ]
-    
-    def is_accessible(self):
+class CustomAdminView(AdminIndexView):
+    @expose('/')
+    def index(self):
         if current_user.is_authenticated and current_user.is_admin:
-            return redirect(url_for('admin'))
-
+            return super(CustomAdminView, self).index()
         else:
+            flash("Access Denied!!! Admin Privilege Only", "danger")
             return redirect(url_for('login'))
 
 
 
+# Custom class for the ModelView
+class CustomModelView(ModelView):
+    can_export = True
+    column_exclude_list = ['password', ]
 
 
 
 # Admin Setup
-admin = Admin(app, name='A&A CARE AND CLEANING SERVICES LTD')
-admin.add_view(CustomAdminView(User, db.session))
+admin = Admin(app, name='A&A CARE AND CLEANING SERVICES LTD', index_view=CustomAdminView())
+admin.add_view(CustomModelView(User, db.session))
 admin.add_view(ModelView(Agency, db.session))
 admin.add_view(ModelView(Job, db.session))
 
 # add logout link to menu bar in the flask Admin
-# admin.add_link(MenuLink(name='Logout', url='/logout'))
+admin.add_link(MenuLink(name='Logout', url='/logout'))
 
 
 
@@ -150,14 +156,6 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-
-
-
-# Custom Admin Route
-@app.route('/admin')
-@login_required
-def admin():
-    return render_template('admin/index.html')
 
 
 
