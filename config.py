@@ -1,5 +1,5 @@
 # Email and Email-Password Configuration
 
-EMAIL = 'eedrish@gmail.com'
+EMAIL = 'eedrish@googlemail.com'
 PASSWORD = 'genesis247'
-SENDER = 'eedrish@gmail.com'
+SENDER = 'eedrish@googlemail.com'
