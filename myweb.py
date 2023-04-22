@@ -61,8 +61,6 @@ mail = Mail(app)
 
 
 
-
-
 # User Model class
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True) 
@@ -191,7 +189,7 @@ def contact():
         message = form.message.data
 
         # Send the email
-        msg = Message(subject, recipients=['admin@gmail.com'])
+        msg = Message(subject, recipients=[EMAIL])
         msg.body = f"Name: {name}\nEmail: {email}\n\n{message}"
         mail.send(msg)
 
