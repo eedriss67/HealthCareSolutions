@@ -14,6 +14,8 @@ from flask_admin.menu import MenuLink
 
 
 
+
+
 # Initializing Flask app
 app = Flask(__name__)
 
