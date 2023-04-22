@@ -14,8 +14,6 @@ from flask_admin.menu import MenuLink
 
 
 
-
-
 # Initializing Flask app
 app = Flask(__name__)
 
@@ -46,15 +44,15 @@ with app.app_context():
 login_manager = LoginManager(app)
 
 
-
+from config import EMAIL, PASSWORD, SENDER
 
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'admin@gmail.com'
-app.config['MAIL_PASSWORD'] = 'admin'
-app.config['MAIL_DEFAULT_SENDER'] = 'admin@gmail.com'
+app.config['MAIL_USERNAME'] = EMAIL
+app.config['MAIL_PASSWORD'] = PASSWORD
+app.config['MAIL_DEFAULT_SENDER'] = SENDER
 
 mail = Mail(app)
 

@@ -2,3 +2,4 @@
 
 EMAIL = 'admin@gmail.com'
 PASSWORD = 'admin247'
+SENDER = 'admin@gmail.com'
