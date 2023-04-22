@@ -24,4 +24,4 @@ instance/
 .gitignore/
 
 # Config
-*.config/
+config/
