@@ -21,7 +21,7 @@ env/
 instance/
 
 # Gitignore
-.gitignore/
+gitignore/
 
 # Config
 *.config/
