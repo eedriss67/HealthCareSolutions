@@ -23,6 +23,9 @@ instance/
 # Config file
 config.py/
 
+# Configurations
+config/
+
 
 
 
