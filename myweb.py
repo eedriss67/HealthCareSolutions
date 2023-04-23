@@ -189,7 +189,7 @@ def contact():
         message = form.message.data
 
         # Send the email
-        msg = Message(subject, recipients=[settings.EMAIL])
+        msg = Message(subject, recipients=[None])
         msg.body = f"Name: {name}\nEmail: {email}\n\n{message}"
         mail.send(msg)
 
