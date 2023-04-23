@@ -146,8 +146,14 @@ input {
 
 /* Contact Us Form Fields resize CSS */
 
-.col-md-8 img {
-  width: 100%;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  padding: 10px;
 }
 
 
