@@ -21,7 +21,7 @@ env/
 instance/
 
 # Config file
-Config/
+config/
 
 
 
