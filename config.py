@@ -1,0 +1,1 @@
+# Email amd Password for email configuration
