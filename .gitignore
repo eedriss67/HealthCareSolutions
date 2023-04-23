@@ -20,7 +20,5 @@ env/
 # Database
 instance/
 
-# Gitignore
+# Config file
 
-# Config
-config.py/
