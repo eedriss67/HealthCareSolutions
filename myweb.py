@@ -31,6 +31,21 @@ app.config['FLASK_ADMIN_SWATCH'] = 'flatly'
 
 
 
+# Configure Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp-mail.outlook.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_SSL'] = False
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = None
+app.config['MAIL_PASSWORD'] = None
+app.config['MAIL_DEFAULT_SENDER'] = None
+
+mail = Mail(app)
+
+
+
+
+
 
 # DataBase configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///admin.db'
@@ -41,20 +56,11 @@ with app.app_context():
 
 
 
+
+
 # Login Manager Configuration
 login_manager = LoginManager(app)
 
-
-
-# Configure Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = None
-app.config['MAIL_PASSWORD'] = None
-app.config['MAIL_DEFAULT_SENDER'] = None
-
-mail = Mail(app)
 
 
 
@@ -193,8 +199,8 @@ def contact():
         msg.body = f"Name: {name}\nEmail: {email}\n\n{message}"
         mail.send(msg)
 
-        flash('Your email has been sent', 'success')
-        return render_template('contact.html', success=True)
+        flash('Your email has been sent successfully', 'success')
+        return redirect(url_for('contact'))
         
     return render_template('contact.html', form=form)      
     

@@ -13,37 +13,39 @@
 
 <!-- Row and Column with Image and Contact Us Form-->
 <div class="row">
-  <div class="col">
-    <div class="image">
-      <img src="{{ url_for('static', filename='images/image6.jpg') }}" alt="Image 6">
+    <div class="col">
+        <div class="image">
+            <img src="{{ url_for('static', filename='images/image6.jpg') }}" alt="Image 6">
+        </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="contact-form">
-       <h2>Contact Us</h2>  
-      <form action="/contact" method="POST">
-        {{ form.hidden_tag() }}
-           <div class="form-group">
-                {{ form.name.label }}
-                {{ form.name(class="form-control") }}
-            </div>
+    <div class="col">
+        <div class="contact-form">
+            <h2>Contact Us</h2> 
+         
+        <form action="/contact" method="POST">
+                {{ form.hidden_tag() }}
+                
             <div class="form-group">
-                {{ form.email.label }}
-                {{ form.email(class="form-control") }}
-            </div>
-            <div class="form-group">
-                {{ form.subject.label }}
-                {{ form.subject(class="form-control") }}
-            </div>
-            <div class="form-group">
-                {{ form.message.label }}
-                {{ form.message(class="form-control") }}
-            </div>
-            <br>
-                {{ form.submit(class="btn btn-primary") }}
-      </form>
+                    {{ form.name.label }}
+                    {{ form.name(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label }}
+                    {{ form.email(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.subject.label }}
+                    {{ form.subject(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.message.label }}
+                    {{ form.message(class="form-control") }}
+                </div>
+                <br>
+                    {{ form.submit(class="btn btn-primary") }}
+        </form>
+        </div>
     </div>
-  </div>
 </div>
 
 <br>
@@ -62,38 +64,3 @@
 
 
 
-<!-- Row and Column with Image and Contact Us Form 
-<form method="post">
-    {{ form.hidden_tag() }}
-    <div class="">
-        <div class="row">
-            <div class="col-md-8">
-                <img src="{{ url_for('static', filename='images/image6.jpg') }}" alt="Image 6">
-            </div>
-            <div class="col-md-4">
-                <div class="contact-form">
-                    <h2>Contact Us</h2>
-                    
-                    <div class="form-group">
-                        {{ form.name.label }}
-                        {{ form.name(class="form-control") }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.email.label }}
-                        {{ form.email(class="form-control") }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.subject.label }}
-                        {{ form.subject(class="form-control") }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.message.label }}
-                        {{ form.message(class="form-control") }}
-                    </div>
-                    <br>
-                        {{ form.submit(class="btn btn-primary") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</form>-->
