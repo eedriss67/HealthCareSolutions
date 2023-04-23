@@ -1,7 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect, url_for, flash, session, logging, abort
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required, UserMixin
 from forms import RegistrationForm, ContactForm, LoginForm
-from config import EMAIL, PASSWORD, SENDER
+from config import settings
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
