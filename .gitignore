@@ -21,7 +21,8 @@ env/
 instance/
 
 # Config file
-config.Py/
+config.py/
+
 
 
 
