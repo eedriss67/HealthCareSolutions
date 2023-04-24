@@ -229,7 +229,7 @@ textarea {
   left: 0;
   top: 0;
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 .carousel-images img {
@@ -251,7 +251,7 @@ textarea {
   font-size: 50px;
   margin: 0 10px;
   cursor: pointer;
-  color: white;
+  color: rgb(118, 123, 139);
 }
 
 .carousel-controls button:hover {
