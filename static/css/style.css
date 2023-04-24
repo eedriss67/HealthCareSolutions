@@ -144,8 +144,40 @@ input {
 
 
 
-/* Contact Us Form Fields resize CSS */
 
+
+/* Content Section CSS */
+
+.content-section {
+  padding: 10px 20px;
+  border: 1px solid #5794b8;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+
+
+
+.register-container{
+  width:400px;
+  margin: 0 auto;
+  justify-content: center; /* Centers the container horizontally */
+  align-items: center; /* Centers the container vertically */
+}
+
+
+
+
+.login-container{
+  width:400px;
+  margin: 0 auto;
+  justify-content: center; /* Centers the container horizontally */
+  align-items: center; /* Centers the container vertically */
+}
+
+
+
+/* Contact Us Form Fields resize CSS  row & column */
 .row {
   display: flex;
   flex-wrap: wrap;

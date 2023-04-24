@@ -8,7 +8,9 @@
 {% block body %}
 
 {% block header %}<div><h3>HEALTH CARE SOLUTIONS</h3></div><hr>{% endblock %}
-<h1>Log In</h1>
+
+<div class="content-section login-container">
+  <h1>Log In</h1>
 
   <form method="POST" action="">
     
@@ -16,7 +18,7 @@
     
     <div class="form-group">
       {{ form.email.label }} 
-      {{ form.email(size=20, class="form-control") }}
+      {{ form.email(class="form-control") }}
       {% if errors %}
         {% for error in form.email.errors %}
           <span>{{ error }}</span>
@@ -26,7 +28,7 @@
 
     <div class="form-group">
       {{ form.password.label }} 
-      {{ form.password(size=20, class="form-control") }}
+      {{ form.password(class="form-control") }}
       {% if errors %}
         {% for error in form.password.errors %}
           <span>{{ error }}</span>
@@ -44,5 +46,6 @@
       {{ form.submit(class="btn btn-primary") }}
     </div>
   </form>
+</div>
 
 {% endblock %}
