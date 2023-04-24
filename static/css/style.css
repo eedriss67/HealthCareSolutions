@@ -158,7 +158,19 @@ input {
 
 
 
+
+/* Contact US CSS */
+.contact-us{
+  background-color: lightslategray;
+}
+
+
+
+
+
+/* Registration Form CSS */
 .register-container{
+  background-color: lightslategray;
   width:400px;
   margin: 0 auto;
   justify-content: center; /* Centers the container horizontally */
@@ -167,13 +179,22 @@ input {
 
 
 
-
+/* Login Form CSS */
 .login-container{
+  background-color: lightslategray;
   width:400px;
   margin: 0 auto;
   justify-content: center; /* Centers the container horizontally */
   align-items: center; /* Centers the container vertically */
 }
+
+
+/* Submit Button CSS */
+.submit-btn{
+  border-radius: 5px;
+  border: 3px solid #ccc;
+}
+
 
 
 
@@ -187,7 +208,6 @@ input {
   flex: 1;
   padding: 10px;
 }
-
 
 
 
