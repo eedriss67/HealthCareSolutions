@@ -1,89 +1,77 @@
 /* Java Script for the Carousel slider */
+
 const carousel = document.querySelector('.carousel');
 const carouselImages = document.querySelector('.carousel-images');
 const carouselPrev = document.querySelector('.prev');
 const carouselNext = document.querySelector('.next');
+const carouselPause = document.querySelector('.pause');
 
 let currentSlide = 0;
-const totalSlides = document.querySelectorAll('.carousel-images img').length;
+let direction = 1;
+const slides = carouselImages.children.length;
+let isPaused = false;
+let intervals;
 
 function nextSlide() {
-  currentSlide++;
-  carouselImages.style.transition = 'transform 0.4s ease-in-out';
-  carouselImages.style.transform = `translateX(-${currentSlide * 25}%)`;
-
-  // Reset to first slide if we've reached the end of the carousel
-  if (currentSlide >= totalSlides) {
-    setTimeout(() => {
-      carouselImages.style.transition = 'none';
-      carouselImages.style.transform = 'translateX(0)';
-      currentSlide = 0;
-    });
+  currentSlide += direction;
+  if (currentSlide >= slides) {
+    direction = -1;
+    currentSlide = slides - 2;
+  } else if (currentSlide < 0) {
+    direction = 1;
+    currentSlide = 1;
   }
+  carouselImages.style.transform = `translateX(-${currentSlide * 25}%)`;
 }
 
 function prevSlide() {
-  currentSlide--;
-  carouselImages.style.transition = 'transform 0.4s ease-in-out';
-  carouselImages.style.transform = `translateX(-${currentSlide * 25}%)`;
-
-  // Move to last slide if we've reached the beginning of the carousel
-  if (currentSlide <= totalSlides) {
-    setTimeout(() => {
-      carouselImages.style.transition = 'none';
-      carouselImages.style.transform = `translateX(-${currentSlide  * 25}%)`;
-      currentSlide = totalSlides;
-    });
+  currentSlide += direction;
+  if (currentSlide >= slides) {
+    direction = -1;
+    currentSlide = slides - 2;
+  } else if (currentSlide < 0) {
+    direction = 1;
+    currentSlide = 1;
   }
+  carouselImages.style.transform = `translateX(-${currentSlide * 25}%)`;
+}
+
+function toggleCarousel() {
+  if (isPaused) {
+    intervals = setInterval(nextSlide, intervalTime);
+    isPaused = false;
+    carouselPause.innerHTML = "&#x23f8;";
+  } else {
+    clearInterval(intervals);
+    isPaused = true;
+    carouselPause.innerHTML = "&#x25b6;";
+  }
+}
+
+function pauseCarousel() {
+  clearInterval(intervals);
+  isPaused = true;
+}
+
+function resumeCarousel() {
+  if (!isPaused) {
+    return;
+  }
+  intervals = setInterval(nextSlide, intervalTime);
+  isPaused = false;
 }
 
 // Set the time interval (in milliseconds)
 const intervalTime = 1500; // 1.5 seconds
 
 // Call the nextSlide function at the specified interval
-setInterval(nextSlide, intervalTime);
+intervals = setInterval(nextSlide, intervalTime);
 
 carouselNext.addEventListener('click', nextSlide);
 carouselPrev.addEventListener('click', prevSlide);
-
-
-
-
-
-
-
-
-/*const carousel = document.querySelector('.carousel');
-const carouselImages = document.querySelector('.carousel-images');
-const carouselPrev = document.querySelector('.prev');
-const carouselNext = document.querySelector('.next');
-
-let currentSlide = 0;
-
-function nextSlide() {
-  currentSlide++;
-  if (currentSlide > 3) {
-    currentSlide = 0;
-  }
-  carouselImages.style.transform = `translateX(-${currentSlide * 25}%)`;
-}
-
-function prevSlide() {
-  currentSlide--;
-  if (currentSlide < 0) {
-    currentSlide = 3;
-  }
-  carouselImages.style.transform = `translateX(-${currentSlide * 25}%)`;
-}
-
-// Set the time interval (in milliseconds)
-const intervalTime = 1500; // 1.5 seconds
-
-// Call the nextSlide function at the specified interval
-setInterval(nextSlide, intervalTime);
-
-carouselNext.addEventListener('click', nextSlide);
-carouselPrev.addEventListener('click', prevSlide);*/
+carouselPause.addEventListener('click', toggleCarousel);
+carouselImages.addEventListener('mouseover', pauseCarousel);
+carouselImages.addEventListener('mouseout', resumeCarousel);
 
 
 

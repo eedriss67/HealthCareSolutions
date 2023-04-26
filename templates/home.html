@@ -26,16 +26,17 @@
       <div class="carousel-controls">
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
-      </div> 
+        <button class="pause">&#x23f8;</button>
+      </div>
   </div>
 </div>
 
 <!--Introduction-->
 <div class="jumbotron">
-  <h3>YOUR CLEANINESS IS OUR GOAL!</h3>
+  <h3 class="pt-3">YOUR CLEANINESS IS OUR GOAL!</h3>
     <img src="{{ url_for('static', filename='images/image5.jpg') }}" alt="Image 5">
-  <p class="">
-    <div class="container">
+  <p>
+    <div class="intro-container">
       <b>Welcome to A&A Care and Cleaning Services Ltd</b> - Your Trusted Partner in Cleaning Services!
 
       We understand that a clean and healthy environment is crucial for your well-being and the well-being of those around you. That's why we provide professional cleaning services that cater to your needs and exceed your expectations.
@@ -53,13 +54,13 @@
 {% block section %}
 <section id="about-us">
     <div class="jumbotron">
-        <h3>ABOUT US</h3>
+        <h3 class="pt-3">ABOUT US</h3>
         <div class="">
          <img src="{{ url_for('static', filename='images/image.jpg') }}" alt="Image">
         </div>
 
         <p>
-          <div class="container">
+          <div class="section-container">
             <p><b>At A&A Care and Cleaning Services Ltd</b>, we understand the importance of a clean and healthy environment. Our mission is to provide top-notch cleaning services that meet and exceed your expectations.
 
               Our team of skilled and experienced professionals is equipped with state-of-the-art tools and equipment to handle any cleaning task. From homes to offices, hospitals to schools, we offer a range of services that cater to your unique needs.
