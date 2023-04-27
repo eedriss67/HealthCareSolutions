@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+<h1>{% block title %}Jobs{% endblock %}</h1>
+
+
+
+{% block body %}
+
+{% block header %}<div><h3>HEALTH CARE SOLUTIONS</h3></div><hr>{% endblock %}
+
+  <div>
+  <h1>Available Jobs</h1>
+
+    <div>
+      {% if jobs %}
+        {% for job in jobs %}
+          JOB TITLE:<span>{{ job.title }}</span><br>
+          DESCRIPTION:<span>{{ job.description }}</span><br>
+          LOCATION:<span>{{ job.location }}</span><br>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

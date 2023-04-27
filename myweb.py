@@ -182,6 +182,15 @@ def about():
 
 
 
+@app.route('/jobs')
+def jobs():
+    jobs = Job.query.all()
+    return render_template('jobs.html', jobs=jobs)
+
+
+
+
+
 # Route for the contact page
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -218,7 +227,7 @@ def register():
         user = User(username=form.username.data, email=form.email.data, password=generate_password_hash(form.password.data))
         db.session.add(user)
         db.session.commit()
-        flash('Account created successfully!', 'success')
+        flash('Account created successfully', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
@@ -237,7 +246,7 @@ def login():
         user = User.query.filter_by(email=form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(user)
-            flash('Login successful!', 'success')
+            flash('Login successful', 'success')
             return redirect(url_for('home'))
         else:
             flash('Invalid email or password', 'danger')
@@ -251,7 +260,7 @@ def login():
 
 
 # Dashboard Page Route
-@app.route('/dashboard/')
+@app.route('/dashboard')
 def dashboard():
     user = current_user
     return render_template('dashboard.html', user=user)
@@ -282,7 +291,7 @@ def update():
 @app.route('/logout')
 def logout():
     logout_user()
-    flash('You have logged out!', 'success')
+    flash('You have logged out', 'success')
     return redirect(url_for('home'))
 
 

@@ -29,13 +29,11 @@
         </table>
     </div>
     <br>
-     
-    <section>
+{% endblock %}
 
-        <div class="">
-            <a href=""><b>Update Account</b></a>
-        </div>
-
+  
+{% block section %}
+    <section id="update-info">
         <form method="POST" action="{{ url_for('update') }}">
             <div>
                 <label for="username">Username</label>
@@ -52,6 +50,6 @@
             <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
         </form>
     </section>
-{% endblock %}
+    {% endblock section %}
 
 
