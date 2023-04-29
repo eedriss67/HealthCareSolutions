@@ -161,7 +161,7 @@ input {
 
 /* Contact US CSS */
 .contact-us{
-  background-color: lightslategray;
+  background-color: rgb(207, 207, 207);
 }
 
 
@@ -170,7 +170,7 @@ input {
 
 /* Registration Form CSS */
 .register-container{
-  background-color: lightslategray;
+  background-color: rgb(197, 199, 201);
   width:400px;
   margin: 0 auto;
   justify-content: center; /* Centers the container horizontally */
@@ -183,7 +183,7 @@ input {
 
 /* Login Form CSS */
 .login-container{
-  background-color: lightslategray;
+  background-color: rgb(197, 199, 201);
   width:400px;
   margin: 0 auto;
   justify-content: center; /* Centers the container horizontally */
@@ -333,26 +333,9 @@ color: rgb(45, 41, 41);
 
 
 
-/* Footer CSS */
- footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: lightslategrey;
-    padding: 10px;
-    text-align: center;
-  }
-
-
 
 
 #my-footer {
-  position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  display: none;
+  background-color: lightslategrey;
 }
-
-
-

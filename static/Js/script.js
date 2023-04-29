@@ -19,7 +19,7 @@ btn.addEventListener('click', function(e) {
 
 
 
-/*--Footer events Listener*/
+/*Footer events Listener*/
 window.onscroll = function() {
   var windowHeight = window.innerHeight;
   var documentHeight = document.body.scrollHeight;

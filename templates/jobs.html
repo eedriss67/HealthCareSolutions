@@ -9,18 +9,39 @@
 
 {% block header %}<div><h3>HEALTH CARE SOLUTIONS</h3></div><hr>{% endblock %}
 
-  <div>
-  <h1>Available Jobs</h1>
+  
+  <h4>JOBS</h4>
 
-    <div>
-      {% if jobs %}
-        {% for job in jobs %}
-          JOB TITLE:<span>{{ job.title }}</span><br>
-          DESCRIPTION:<span>{{ job.description }}</span><br>
-          LOCATION:<span>{{ job.location }}</span><br>
-        {% endfor %}
-      {% endif %}
+    <div class="card">
+      <table class="table table-sm">
+        <div class="card-header">
+          <tr>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>LOCATION</th>
+            <th></th>
+          </tr>
+        </div>
+        <div class="card-body">
+            {% if jobs %}
+            <tr>
+            {% for job in jobs %}
+            <tr>
+              <td>{{ job.title }}</td>
+              <td>{{ job.description }}</td>
+              <td>{{ job.location }}</td>
+              {% if job.location == 'Crawley' %}
+              <td><a href="">More Details</a></td>
+              {% elif job.location == 'London' %}
+              <td><a href="">More Details</a></td>
+              {% else %}
+              <td><a href="">More Details</a></td>
+              {% endif %}
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </div>
+      </table>
     </div>
-  </div>
 
 {% endblock %}
