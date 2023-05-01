@@ -7,7 +7,9 @@
 
 {% block body %}
 
-{% block header %}<div class="mt-4"><h4>HEALTH CARE SOLUTIONS</h4></div><hr>{% endblock %}
+<!--{% block header %}<div class="mt-4"><h4>HEALTH CARE SOLUTIONS</h4></div><hr>{% endblock %}-->
+
+<div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='1100' height='400'></div><hr>
 
 <!-- Create the carousel HTML structure -->
 <div class="jumbotron">
@@ -66,13 +68,14 @@
 <!--About Us-->
 <section id="about-us">
     <div class="jumbotron">
-        <h4 class="pt-3">ABOUT US</h4>
+        <h4 class="pt-3">SPARKLING CLEAN</h4>
         <div class="">
          <img src="{{ url_for('static', filename='images/image.jpg') }}" alt="Image">
         </div>
 
         <p>
           <div class="section-container">
+            <h4 class="pt-3">ABOUT US</h4><hr>
             <p><b>At A&A Care and Cleaning Services Ltd</b>, we understand the importance of a clean and healthy environment. Our mission is to provide top-notch cleaning services that meet and exceed your expectations.
 
               Our team of skilled and experienced professionals is equipped with state-of-the-art tools and equipment to handle any cleaning task. From homes to offices, hospitals to schools, we offer a range of services that cater to your unique needs.

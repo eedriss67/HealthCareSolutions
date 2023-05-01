@@ -7,11 +7,14 @@
 
 {% block body %}
 
-{% block header %}<div class="mt-4"><h4>HEALTH CARE SOLUTIONS</h4></div><hr>{% endblock %}
+<!--{% block header %}<div class="mt-4"><h4>HEALTH CARE SOLUTIONS</h4></div><hr>{% endblock %}-->
+
+
+<div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='1100' height='400'></div><hr>
 
 
 <div class="content-section register-container">
-  <h1>Register</h1>
+  <h4>Register</h4><hr>
   <form method="post">
     {{ form.hidden_tag() }}
   

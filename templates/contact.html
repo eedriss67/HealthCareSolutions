@@ -9,7 +9,9 @@
 
 {% block body %}
 
-{% block header %}<div class="mt-4"><h4>HEALTH CARE SOLUTIONS</h4></div><hr>{% endblock %}
+<!--{% block header %}<div class="mt-4"><h4>HEALTH CARE SOLUTIONS</h4></div><hr>{% endblock %}-->
+
+<div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='1100' height='400'></div><hr>
 
 <!-- Row and Column with Image and Contact Us Form-->
 <div class="row">
@@ -20,7 +22,7 @@
     </div>
     <div class="col">
         <div class="content-section contact-us">
-            <h2>Contact Us</h2> 
+            <h4>Contact Us</h4><hr> 
          
         <form action="/contact" method="POST">
                 {{ form.hidden_tag() }}
