@@ -1,17 +1,21 @@
 {% extends 'base.html' %}
 
 
-<h1>{% block title %}Log In{% endblock %}</h1>
+<h1>{% block title %}Login{% endblock %}</h1>
 
 
 
+
+<!-- Header Block -->
+{% block header %}
+    <div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='1100' height='400'></div>
+{% endblock %}
+
+
+
+
+<!-- Body Block -->
 {% block body %}
-
-<!--{% block header %}<div class="mt-4"><h4>HEALTH CARE SOLUTIONS</h4></div><hr>{% endblock %}-->
-
-
-<div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='1100' height='400'></div>
-
 
 <div class="content-section login-container">
   <h4>LOGIN</h4><hr>

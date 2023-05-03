@@ -5,13 +5,19 @@
 
 
 
+
+
+<!-- Header Block -->
+{% block header %}
+    <div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='1100' height='400'></div>
+{% endblock %}
+
+
+
+
+
+<!-- Body Block -->
 {% block body %}
-
-<!--{% block header %}<div class="mt-4"><h4>HEALTH CARE SOLUTIONS</h4></div><hr>{% endblock %}-->
-
-
-<div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='1100' height='400'></div>
-
 
 <div class="content-section register-container">
   <h4>REGISTER</h4><hr>
