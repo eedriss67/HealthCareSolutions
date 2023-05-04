@@ -29,39 +29,38 @@
 </head>
 
 <body>
+  <!--FeedBack Message to Users-->
+  <div class=" messages container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          <ul class='flash-message'>
+              {% for category, message in messages %}
+              <li class="alert alert-{{ category }}">
+                  {{ message }}
+              </li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+      {% endwith %}
 
-    <!--Inclusion of Navigation Bar-->
-    {% include 'navbar.html' %}
 
 
     <!--Block Header-->
-    <header>{% block header %}{% endblock %}</header>
+    <header>
+      
+      {% block header %}{% endblock %}
 
-    <section class="content"> 
-        <!--FeedBack Message to Users-->
-        <div class="flash-container">
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                <div class='flash-message'>
-                    {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">
-                        {{ message }}
-                    </div>
-                    {% endfor %}
-                </div>
-                {% endif %}
-            {% endwith %}
-        </div>
-    </section>
+      <!--Inclusion of Navigation Bar-->
+      {% include 'navbar.html' %}
 
+    </header>
 
-    
     <!--Block Body-->
     <div class="body-content container">
         {% block body %}{% endblock %} 
     </div>
-
-    
+  </div>
+     
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="bootstrap" viewBox="0 0 118 94">

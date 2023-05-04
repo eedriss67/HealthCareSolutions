@@ -286,18 +286,27 @@ input {
 
 
 
-/* Intro Container CSS */
-.intro-container{
-  padding: 40px;
+/* Intro Messages CSS */
+.intro-messages{
+  padding: 30px;
   text-align: justify;
 }
 
 
+.intro-messages a{
+  text-decoration: none;
+}
 
-/* Section Container CSS */
-.section-container{
-  padding: 40px;
+
+/* Section Messages CSS */
+.section-messages{
+  padding: 30px;
   text-align: justify;
+}
+
+
+.section-messages a{
+  text-decoration: none;
 }
 
 
@@ -321,6 +330,7 @@ input {
   border-radius: 100%;
 }
 
+
 .back-to-top:hover {
   background-color: #555;
 }
@@ -328,23 +338,63 @@ input {
 
 
 
+/* Flash Message 
+.messages .flash-message {
+  width: 750px;
+  margin-top: 55px;
+  align-content: center;
+  text-align: center; 
+}
+
+.messages {
+  width: 100%; 
+  justify-content: center; 
+  align-items: center; 
+}*/
+
+
+
 /* Flash Message */
+.messages {
+  margin: 20px auto;
+  max-width: 800px;
+}
+
 .flash-message {
-  width: 700px;
-  margin: 0 auto; /* Centers the box horizontally */
-  text-align: center; /* Centers the message text within the box */
+  list-style: none;
+  padding: 10px;
 }
 
-
-
-.flash-container {
-  width: 100%; /* Adjust the width as needed */
-  display: flex;
-  margin-top: 10px;
-  justify-content: center; /* Centers the container horizontally */
-  align-items: center; /* Centers the container vertically */
+.alert {
+  margin-top: 50px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
 }
 
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
 
 
 
