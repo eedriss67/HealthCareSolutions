@@ -29,6 +29,11 @@
 </head>
 
 <body>
+
+  <!--Inclusion of Navigation Bar-->
+  {% include 'navbar.html' %}
+
+
   <!--FeedBack Message to Users-->
   <div class=" messages container">
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -44,19 +49,11 @@
       {% endwith %}
 
 
-
     <!--Block Header-->
-    <header>
-      
-      {% block header %}{% endblock %}
-
-      <!--Inclusion of Navigation Bar-->
-      {% include 'navbar.html' %}
-
-    </header>
+    <header>{% block header %}{% endblock %}</header>
 
     <!--Block Body-->
-    <div class="body-content container">
+    <div class="body-content">
         {% block body %}{% endblock %} 
     </div>
   </div>
@@ -108,7 +105,7 @@
     </div>
 
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>&copy; 2023 A&A, Inc. All rights reserved.</p>
+      <p>&copy; 2023 A&A</p>
       <ul class="list-unstyled d-flex">
         <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
         <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>

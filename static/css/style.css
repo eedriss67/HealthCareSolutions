@@ -10,7 +10,7 @@ body {
 
 
 .body-content {
-    padding: 5px;
+    padding: 3px;
     font-family:sans-serif;
 }
 
@@ -239,7 +239,7 @@ input {
 
 /* Contact Us Form Fields resize CSS  row & column */
 .row {
-  display: flex;
+
   flex-wrap: wrap;
   margin-top: 5px;
 }
@@ -336,21 +336,6 @@ input {
 }
 
 
-
-
-/* Flash Message 
-.messages .flash-message {
-  width: 750px;
-  margin-top: 55px;
-  align-content: center;
-  text-align: center; 
-}
-
-.messages {
-  width: 100%; 
-  justify-content: center; 
-  align-items: center; 
-}*/
 
 
 
