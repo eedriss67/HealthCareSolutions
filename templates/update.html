@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Update{% endblock %}
+
+
+{% block body %}
+
+<div class="form-group update-content content-section container">
+    <h5>UPDATE YOUR DETAILS</h5><hr>
+    <form method="POST" action="{{ url_for('update') }}">
+        <div class="">
+            <div class="d-flex my-3" style="padding-left:3px;">
+                <label class="mt-2" style="padding-right:50px;" for="username">Username:</label>
+                <input type="text" name="username" value="{{ user.username }}", class="form-control">
+            </div>
+            <div class="d-flex my-3" style="padding-left:3px;">
+                <label  class="mt-2" style="padding-right:85px;" for="email">Email:</label>
+                <input type="email" name="email" value="{{ user.email }}", class="form-control">
+            </div>
+            <div class="d-flex my-3" style="padding-left:3px;">
+                <label class="mt-2" style="padding-right:55px;" for="password">Password:</label>
+                <input type="password" name="password" value="{{ user.password }}", class="form-control">
+            </div>
+            <button type="submit" class="btn btn-secondary mt-3">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

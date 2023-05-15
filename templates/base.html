@@ -35,28 +35,29 @@
 
 
   <!--FeedBack Message to Users-->
-  <div class=" messages container">
-      {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-          <ul class='flash-message'>
-              {% for category, message in messages %}
-              <li class="alert alert-{{ category }}">
-                  {{ message }}
-              </li>
-              {% endfor %}
-          </ul>
-          {% endif %}
-      {% endwith %}
-
-
-    <!--Block Header-->
-    <header>{% block header %}{% endblock %}</header>
-
-    <!--Block Body-->
-    <div class="body-content">
-        {% block body %}{% endblock %} 
-    </div>
+  <div class="container mt-3">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class='flash-message'>
+            {% for category, message in messages %}
+            <li class="alert alert-{{ category }}">
+                {{ message }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
   </div>
+
+
+  <!--Block Header-->
+  <header>{% block header %}{% endblock %}</header>
+
+  <!--Block Body-->
+  <div class="body-content container">
+      {% block body %}{% endblock %} 
+  </div>
+  
      
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -120,6 +121,6 @@
 
     <!-- Java Scripts for footer event listener -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="static/Js/script.js"></script>
+    <script src="static/js/script.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 
 <!-- Header Block -->
 {% block header %}
-    <div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='700' height='350'></div>
+    <div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='700' height='350'><hr></div>
 {% endblock %}
 
 
@@ -20,19 +20,19 @@
 {% block body %}
 
 <div class="content-section register-container">
-  <h4>REGISTER</h4><hr>
+  <h5>REGISTER</h5><hr>
   <form method="post">
     {{ form.hidden_tag() }}
   
     <div class="form-group">
-        {{ form.username.label }}
-        {% if form.username.errors %}
-          {{ form.username(size=30, class='form-controlform-control-lg is-invalid') }}
-            {% for error in form.username.errors %}
+        {{ form.name.label }}
+        {% if form.name.errors %}
+          {{ form.name(size=30, class='form-controlform-control-lg is-invalid') }}
+            {% for error in form.name.errors %}
               <span>{{ error }}</span>
             {% endfor %}
             {% else %}
-            {{ form.username(size=30, class='form-control') }}
+            {{ form.name(size=30, class='form-control') }}
         {% endif %}
     </div>
 
@@ -73,7 +73,7 @@
     </div>
   
     <br>
-    {{ form.submit(class="submit-btn") }}
+    {{ form.submit(class="submit-btn btn btn-secondary") }}
   </form>
 </div>
 

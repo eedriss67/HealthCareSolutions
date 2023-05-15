@@ -9,6 +9,8 @@ body {
 
 
 
+
+/* Body Content CSS */
 .body-content {
     padding: 3px;
     font-family:sans-serif;
@@ -17,6 +19,7 @@ body {
 
 
 
+/* Header Image CSS */
 .header-img > img {
   margin-top: 30px;
 }
@@ -24,6 +27,7 @@ body {
 
 
 
+/* Section Content CSS */
 .section-content {
     padding: 5px;
     font-family:sans-serif;
@@ -100,13 +104,9 @@ form {
 
 
 
-
-
-
 .form-group {
   text-align: center;
 }
-
 
 
 
@@ -158,6 +158,8 @@ form {
 
 
 
+
+/* Input CSS */
 input {
   box-sizing: border-box; /* include padding and border in the width calculation */
 }
@@ -182,7 +184,8 @@ input {
 
 /* Contact US CSS */
 .contact-us{
-  background-color: rgb(207, 207, 207);
+  background-color: rgb(208, 208, 208);
+  margin-bottom: 10px;
 }
 
 
@@ -191,9 +194,10 @@ input {
 
 /* Registration Form CSS */
 .register-container{
-  background-color: rgb(252, 253, 253);
+  background-color: rgb(250, 250, 250);
   width:400px;
   margin: 0 auto;
+  margin-bottom: 50px;
   justify-content: center; /* Centers the container horizontally */
   align-items: center; /* Centers the container vertically */
 }
@@ -204,9 +208,10 @@ input {
 
 /* Login Form CSS */
 .login-container{
-  background-color: rgb(252, 253, 253);
+  background-color: rgb(250, 250, 250);
   width:400px;
   margin: 0 auto;
+  margin-bottom: 50px;
   justify-content: center; /* Centers the container horizontally */
   align-items: center; /* Centers the container vertically */
 }
@@ -214,17 +219,44 @@ input {
 
 
 
+/* Update CSS */
+.update-content {
+  background-color: rgb(250,250,250);
+  margin-top: 70px;
+  margin-bottom: 20px;
+  width: 70%; 
+}
+
+
+
+
+/* Dashboard CSS */
+.dash-container {
+  width: 70%;
+  background-color: rgb(250,250,250);
+}
+
+
+
+
+/* Dashboard Anchor Tag CSS */
+.dash-container  a {
+  text-decoration: none;
+}
+
+
+
 
 /* Submit Button CSS */
 .submit-btn{
   border-radius: 5px;
-  border: 3px solid #ccc;
 }
 
 
 
 
 
+/* Back to Home CSS */
 .back-home {
   text-decoration: none;
   border-radius: 5px;
@@ -239,11 +271,9 @@ input {
 
 /* Contact Us Form Fields resize CSS  row & column */
 .row {
-
   flex-wrap: wrap;
   margin-top: 5px;
 }
-
 
 
 
@@ -271,13 +301,13 @@ input {
 
 
 
-
-
 /* Jumbotron CSS */
 .jumbotron{
     position: relative;
+    display: inline-block; 
     padding:0 !important;
-    margin-top:30px !important;
+    margin-top:40px !important;
+    width: 90%;
     background: #eee;
     text-align:center;
     margin-bottom: 0 !important;

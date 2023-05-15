@@ -8,7 +8,7 @@
 
 <!-- Header Block -->
 {% block header %}
-    <div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='700' height='350'></div>
+    <div class='header-img container'><img src="{{ url_for('static', filename='images/health3.jpg' )}}" width='700' height='350'><hr></div>
 {% endblock %}
 
 
@@ -18,7 +18,7 @@
 {% block body %}
 
 <div class="content-section login-container">
-  <h4>LOGIN</h4><hr>
+  <h5>LOGIN</h5><hr>
 
   <form method="POST" action="">
     
@@ -51,7 +51,7 @@
 
     <br>
     <div class="form-group login-btn">
-      {{ form.submit(class="submit-btn") }}
+      {{ form.submit(class="submit-btn btn btn-secondary") }}
     </div>
   </form>
 </div>

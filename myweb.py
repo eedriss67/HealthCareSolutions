@@ -64,9 +64,6 @@ login_manager = LoginManager(app)
 
 
 
-
-
-
 # User Model class
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True) 
@@ -147,6 +144,7 @@ admin.add_view(ModelView(Agency, db.session))
 admin.add_view(ModelView(Job, db.session))
 
 # add logout link to menu bar in the flask Admin
+admin.add_link(MenuLink(name='Site', url='/'))
 admin.add_link(MenuLink(name='Logout', url='/logout'))
 
 
@@ -271,16 +269,18 @@ def dashboard():
 
 
 # Update Page Route
-@app.route('/update', methods=['POST', 'GET'])
+@app.route('/update/', methods=['POST', 'GET'])
 def update():
+    user = current_user
     if request.method == 'POST':
-        user = current_user
         user.username = request.form['username']
         user.email = request.form['email']
         user.password = generate_password_hash(request.form['password'])
+        db.session.add(user)
         db.session.commit()
         flash('Account updated successfully', category='success')
-    return redirect(url_for('dashboard'))
+        return redirect(url_for('dashboard'))
+    return render_template('update.html', user=user)
 
 
 
