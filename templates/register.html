@@ -19,20 +19,20 @@
 <!-- Body Block -->
 {% block body %}
 
-<div class="content-section register-container">
+<div class="content-section register-container shadow">
   <h5>REGISTER</h5><hr>
   <form method="post">
     {{ form.hidden_tag() }}
   
     <div class="form-group">
-        {{ form.name.label }}
-        {% if form.name.errors %}
-          {{ form.name(size=30, class='form-controlform-control-lg is-invalid') }}
-            {% for error in form.name.errors %}
+        {{ form.username.label }}
+        {% if form.username.errors %}
+          {{ form.username(size=30, class='form-controlform-control-lg is-invalid') }}
+            {% for error in form.username.errors %}
               <span>{{ error }}</span>
             {% endfor %}
             {% else %}
-            {{ form.name(size=30, class='form-control') }}
+            {{ form.username(size=30, class='form-control') }}
         {% endif %}
     </div>
 
