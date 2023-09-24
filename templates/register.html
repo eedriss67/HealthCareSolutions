@@ -25,14 +25,14 @@
     {{ form.hidden_tag() }}
   
     <div class="form-group">
-        {{ form.username.label }}
-        {% if form.username.errors %}
-          {{ form.username(size=30, class='form-controlform-control-lg is-invalid') }}
-            {% for error in form.username.errors %}
+        {{ form.name.label }}
+        {% if form.name.errors %}
+          {{ form.name(size=30, class='form-controlform-control-lg is-invalid') }}
+            {% for error in form.name.errors %}
               <span>{{ error }}</span>
             {% endfor %}
             {% else %}
-            {{ form.username(size=30, class='form-control') }}
+            {{ form.name(size=30, class='form-control') }}
         {% endif %}
     </div>
 

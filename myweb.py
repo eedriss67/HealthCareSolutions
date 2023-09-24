@@ -67,7 +67,7 @@ login_manager = LoginManager(app)
 # User Model class
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True) 
-    username = db.Column(db.String(35), unique=True, nullable=False)
+    name = db.Column(db.String(35), unique=True, nullable=False)
     email = db.Column(db.String(55), unique=True, nullable=False)
     password = db.Column(db.String(), nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
@@ -81,7 +81,7 @@ class User(UserMixin, db.Model):
         return True   
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<User %r>' % self.name
 
 
 
@@ -222,7 +222,7 @@ def contact():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data, password=generate_password_hash(form.password.data))
+        user = User(name=form.name.data, email=form.email.data, password=generate_password_hash(form.password.data))
         db.session.add(user)
         db.session.commit()
         flash('Account created successfully', 'success')
@@ -273,9 +273,9 @@ def dashboard():
 def update():
     user = current_user
     if request.method == 'POST':
-        user.username = request.form['username']
+        user.name = request.form['name']
         user.email = request.form['email']
-        user.password = generate_password_hash(request.form['password'])
+        user.password = request.form['password']
         db.session.add(user)
         db.session.commit()
         flash('Account updated successfully', category='success')
